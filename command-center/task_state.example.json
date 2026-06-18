@@ -1,0 +1,119 @@
+{
+  "generated": "2026-06-16",
+  "owner": "Your Name",
+  "headline": "What needs my attention next.",
+  "workstreams": [
+    {
+      "key": "platform",
+      "label": "Platform",
+      "accent": "blue",
+      "lead": "Dana Lee",
+      "items": [
+        {
+          "id": "p1",
+          "title": "Confirm staging environment access for Acme Corp team",
+          "status": "open",
+          "due": "2026-06-18",
+          "note": "Sam Rivera needs credentials before the Project Atlas kickoff call",
+          "lineage": "knowledge/acme-platform-kickoff.md"
+        },
+        {
+          "id": "p2",
+          "title": "Review API rate-limit policy with Acme Corp engineering lead",
+          "status": "waiting",
+          "due": "2026-06-20",
+          "note": "Waiting on Acme Corp to share their current rate-limit thresholds",
+          "lineage": "knowledge/acme-platform-api-notes.md"
+        },
+        {
+          "id": "p3",
+          "title": "Deliver Project Atlas platform architecture diagram",
+          "status": "done",
+          "due": "2026-06-12",
+          "note": "Reviewed and approved by Dana Lee; filed in shared drive",
+          "lineage": "knowledge/acme-platform-architecture.md"
+        }
+      ]
+    },
+    {
+      "key": "data",
+      "label": "Data",
+      "accent": "purple",
+      "lead": "Priya Nair",
+      "items": [
+        {
+          "id": "d1",
+          "title": "Define data dictionary for Project Atlas reporting layer",
+          "status": "open",
+          "due": "2026-06-19",
+          "note": "Priya Nair leading; first draft due before the weekly data review",
+          "lineage": "knowledge/acme-data-dictionary-draft.md"
+        },
+        {
+          "id": "d2",
+          "title": "Validate source field mappings against Acme Corp export schema",
+          "status": "open",
+          "due": "2026-06-21",
+          "note": "Three fields unresolved from last review; Priya to follow up with Acme Corp",
+          "lineage": "knowledge/acme-data-field-mapping.md"
+        },
+        {
+          "id": "d3",
+          "title": "Run data quality baseline on Project Atlas pilot dataset",
+          "status": "waiting",
+          "due": "2026-06-23",
+          "note": "Blocked on d1 completion; Priya Nair flagged dependency in standup",
+          "lineage": "knowledge/acme-data-quality-log.md"
+        },
+        {
+          "id": "d4",
+          "title": "Archive legacy Acme Corp data extracts from pre-project period",
+          "status": "done",
+          "due": "2026-06-10",
+          "note": "Completed by Priya Nair; moved to cold storage folder",
+          "lineage": "knowledge/acme-data-archive-log.md"
+        }
+      ]
+    },
+    {
+      "key": "adoption",
+      "label": "Adoption",
+      "accent": "green",
+      "lead": "Marco Bianchi",
+      "items": [
+        {
+          "id": "a1",
+          "title": "Schedule Project Atlas onboarding session for Acme Corp pilot users",
+          "status": "open",
+          "due": "2026-06-17",
+          "note": "Marco Bianchi to send calendar invites; target group of eight users",
+          "lineage": "knowledge/acme-adoption-onboarding-plan.md"
+        },
+        {
+          "id": "a2",
+          "title": "Draft quick-start guide for Project Atlas end users",
+          "status": "open",
+          "due": "2026-06-20",
+          "note": "Marco Bianchi drafting; Sam Rivera to review before distribution",
+          "lineage": "knowledge/acme-adoption-quickstart-draft.md"
+        },
+        {
+          "id": "a3",
+          "title": "Collect feedback from Acme Corp pilot cohort after week one",
+          "status": "waiting",
+          "due": "2026-06-27",
+          "note": "Waiting on a1 to complete before feedback collection can begin",
+          "lineage": "knowledge/acme-adoption-feedback-log.md"
+        },
+        {
+          "id": "a4",
+          "title": "Present Project Atlas adoption metrics at steering committee",
+          "status": "done",
+          "due": "2026-06-09",
+          "note": "Deck delivered by Marco Bianchi; Acme Corp sponsor approved next phase",
+          "lineage": "knowledge/acme-adoption-steering-deck.md"
+        }
+      ]
+    }
+  ]
+}

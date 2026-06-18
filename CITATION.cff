@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: Compound AI Team Edition
+message: If you use this kit, please cite it as below.
+type: software
+authors:
+  - family-names: Sutcliff
+    given-names: Cameron
+url: https://cameronsutcliff.com/compound-ai
+repository-code: https://github.com/cameronpsutcliff/compound-ai-team-edition
+version: 1.0.0
+date-released: "2026-06-17"
+license: CC-BY-4.0
+abstract: A thin plain-text and AI operating standard for teams. Your knowledge lives in folders you control, the model is interchangeable, and a generic Command Center keeps the team's attention on what matters. Pairs with the Compound AI Individual edition.
