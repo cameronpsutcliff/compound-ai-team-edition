@@ -1,0 +1,980 @@
+{
+  "package_name": "Compound AI Operating Standards",
+  "origin_id": "compound-ai-operating-standards",
+  "author": "Cameron Sutcliff",
+  "canonical_url": "https://cameronsutcliff.com/compound-ai",
+  "source_repo": "https://github.com/cameronpsutcliff/compound-ai-operating-standards",
+  "version": "2.7.0",
+  "release_date": "2026-06-10",
+  "license_docs": "CC-BY-4.0",
+  "license_code": "Apache-2.0",
+  "aggregate_sha256": "c7f48f3e8a3ec94c040fbccaac4947f85af9f2b858035917f32b0bb6df9dcaff",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 116,
+      "sha256": "cdfacdcf8696f99f181ffba8a5a0d000292d358719d71ab0da51a8b29b8ded4f"
+    },
+    {
+      "path": "ADOPT.md",
+      "bytes": 8195,
+      "sha256": "08706a942a9d3d368313e866e073eb76bdaa899c74ecfc7426ed217f01def250"
+    },
+    {
+      "path": "AGENT.annotated.md",
+      "bytes": 13461,
+      "sha256": "68006984696465b81e00e48e0081712be0de573504a9ff6f3e0398fa76f3d843"
+    },
+    {
+      "path": "AGENT.md",
+      "bytes": 3271,
+      "sha256": "e14c79158c25705b8d2cf9e73479efcfab0bc53e368284ad12ade1ebc5a9d398"
+    },
+    {
+      "path": "BACKLOG.md",
+      "bytes": 138,
+      "sha256": "bb898f9348a4450855f5300bdf0d69d090879d87b0dd60deaf63313ebc7e5fde"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 627,
+      "sha256": "799e739422dae2cde2956ba3a27e599e3aeb24da9cc814e88347e934459cb07e"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 274,
+      "sha256": "2cb243950d482b43ade40ffd52b5eaace93e9b2c8b22058a25b5f2da385dec11"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 7025,
+      "sha256": "7a0dfca033e0d788ec5ae24e7fa68456b5f75ac2e78c1fb83cc68e1e487c8ddb"
+    },
+    {
+      "path": "INSTALL.md",
+      "bytes": 6324,
+      "sha256": "fef8dd4e443f560a03a96f958f9960e93fe74eee18b43794eb245447d378696f"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 1371,
+      "sha256": "cd72b1ec4314bb6a0cfde4c1ffcba50ad81e88a007a5cf89526039535e9e91bf"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 507,
+      "sha256": "73f74f391f50c083e4e8e7428aef565a0dcd1f9e4e3d5ff4c2f1b9945fa69cc0"
+    },
+    {
+      "path": "Project.md",
+      "bytes": 501,
+      "sha256": "64193671e8fc8317982ca5802ef87be7d8ddb461da064dbb0c25810f8dc81a9b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2126,
+      "sha256": "846c04e3f2ea307cb2ff7214e1c853240bbcdf45081afc28fd80b61daf693034"
+    },
+    {
+      "path": "STATE.md",
+      "bytes": 294,
+      "sha256": "03739034cb9c29a27ca1f394475b44754fe57eadc4b2adbb5a7d6062b0fc5d3f"
+    },
+    {
+      "path": "_citations.md",
+      "bytes": 6318,
+      "sha256": "52a2776406d4e5705836958a292af33f5466b1daa0ff536267e721ec23965f25"
+    },
+    {
+      "path": "_map.md",
+      "bytes": 3264,
+      "sha256": "abfe9623961215851a2479dc11605afb2f24c2d331b42cb59ae9523928dc0126"
+    },
+    {
+      "path": "_skills-index.md",
+      "bytes": 5588,
+      "sha256": "585bfe35936d2fab853d47b97f5728cdc311cfd50088c496d8881f57390c5f79"
+    },
+    {
+      "path": "_tiers.md",
+      "bytes": 2309,
+      "sha256": "dcc885f661f89fc7b8f54e8a109e60c0742a98ae12fed3c4cc307ba89c816a46"
+    },
+    {
+      "path": "bin/verify-portable.sh",
+      "bytes": 3612,
+      "sha256": "12c004c6c7f5b8edae8147663b54b9779ffc41f72f601a9501ff529b86bf1084"
+    },
+    {
+      "path": "capability-profile.md",
+      "bytes": 3169,
+      "sha256": "977f3c248624179d4b63a75e8d2bffc44698afb8b81738f2ac91a93ac6a5ec8c"
+    },
+    {
+      "path": "code/cache_key.py",
+      "bytes": 7069,
+      "sha256": "41b4846b6ad80681bc694528238ca0e692dbf8621e0e592d5b6fe3c9bb31e673"
+    },
+    {
+      "path": "code/phase_wrapper.sh",
+      "bytes": 3692,
+      "sha256": "e1be35230a07603a219e0e74f417b39443f8a4fa3c3d5ef5abd408e108d55815"
+    },
+    {
+      "path": "code/pipeline_runs.sql",
+      "bytes": 3717,
+      "sha256": "6dfd689e7a81f6a7e442af80f81d8173f7dfb125850eef15afcba4e50602cb02"
+    },
+    {
+      "path": "code/schema_validator.py",
+      "bytes": 4098,
+      "sha256": "a8b230f723f97ec609a538f56e913b9eb7e49d46288a41a68711147e2d958e5e"
+    },
+    {
+      "path": "codemeta.json",
+      "bytes": 831,
+      "sha256": "66607fc5a474e34655b44622e117df9008bceb2f4dc0952853488c44c8c2bc7a"
+    },
+    {
+      "path": "command-center/.gitignore",
+      "bytes": 75,
+      "sha256": "36af9fc434d9ec5153092c74d685f51a12a7d4821409a9f2bf835ec9c260e9ae"
+    },
+    {
+      "path": "command-center/README.md",
+      "bytes": 2419,
+      "sha256": "055bf280c71fe8eeab082400b14b178fc8fd2f0d1aa25a747f02a92f2370546f"
+    },
+    {
+      "path": "command-center/refresh.py",
+      "bytes": 9463,
+      "sha256": "d7243ee6e4c999a36dd375400fe925c487786d7edfdf3a3a6d4d8ad68dab6d72"
+    },
+    {
+      "path": "command-center/task_state.example.json",
+      "bytes": 4197,
+      "sha256": "a3851f5e063942b0e1e3bdbfe82d1d0db30b68378bbdbb98f390847661303e13"
+    },
+    {
+      "path": "docs/FIELD-GUIDE.md",
+      "bytes": 139415,
+      "sha256": "afd70c4d10abb02c14a8bc4c86ee146c2959b9af1bae11e7c6cab8aa3cecdcc8"
+    },
+    {
+      "path": "hooks/post-session/append-state.sh",
+      "bytes": 281,
+      "sha256": "62370f6fe7ac42f14127dcc024d5b1c22448fabbd55ffffb2b94ca149871551d"
+    },
+    {
+      "path": "hooks/pre-commit/no-em-dashes.sh",
+      "bytes": 401,
+      "sha256": "4452ed5275fb5fc8807234e619f625ed52783def442822af8b3f090babbd3366"
+    },
+    {
+      "path": "install/install.py",
+      "bytes": 8470,
+      "sha256": "34017d45f3e874512e630a8b19fdd9aba7e6f3c8a0e9e40d97e42bd12f7dc91d"
+    },
+    {
+      "path": "releases/v1.0.0/RELEASE-NOTES.md",
+      "bytes": 1974,
+      "sha256": "632e5a25e0d924c3a88230eedb501a4e4cf969e938eb546b6464d49336088faa"
+    },
+    {
+      "path": "releases/v2.1.0/RELEASE-NOTES.md",
+      "bytes": 3875,
+      "sha256": "02bdb833d5ae1a1e37ba0145cdbc488ddf22fc5579358cdaa1a2b1b2309419bb"
+    },
+    {
+      "path": "releases/v2.2.0/RELEASE-NOTES.md",
+      "bytes": 4902,
+      "sha256": "3666a7db7be52fd57cd228ac1ecae6426d77d88fe8e91dcdb924603ce9fa8237"
+    },
+    {
+      "path": "releases/v2.3.0/RELEASE-NOTES.md",
+      "bytes": 5021,
+      "sha256": "7eea72b389a28742012f9b20cdcd8830629008958ea310c7f719451191c4e7e1"
+    },
+    {
+      "path": "releases/v2.3.1/RELEASE-NOTES.md",
+      "bytes": 4196,
+      "sha256": "ab399a4c4c7acdf5a02467263ed03adaffbd885f60d0a93ca26e4b5ee36fcf25"
+    },
+    {
+      "path": "releases/v2.3.2/RELEASE-NOTES.md",
+      "bytes": 4094,
+      "sha256": "25c355bc4018fccaaf40fc7a9bfce08656655b7a904c31bd4178f755a30e35d2"
+    },
+    {
+      "path": "releases/v2.4.0/RELEASE-NOTES.md",
+      "bytes": 3983,
+      "sha256": "6e15f84a54703119d0879a283ccdfd774cb28f9a9e15602f3d54dedf881933f6"
+    },
+    {
+      "path": "releases/v2.4.0/ship-gate-report.md",
+      "bytes": 3674,
+      "sha256": "8c3f177320004d40e565510ad0d4e27bb083d62a8ca2a172c6549fc659ca97a0"
+    },
+    {
+      "path": "releases/v2.5.0/RELEASE-NOTES.md",
+      "bytes": 8862,
+      "sha256": "e6986530996a9bc8a52d23efa1676eadb34e9b7dc361bc23a75e5c0473067d50"
+    },
+    {
+      "path": "releases/v2.6.0/RELEASE-NOTES.md",
+      "bytes": 3867,
+      "sha256": "b1c089b2d50cc2b2ed29495171140a299df0f77d4645eff2c7501e1c7c07612a"
+    },
+    {
+      "path": "releases/v2.7.0/RELEASE-NOTES.md",
+      "bytes": 2659,
+      "sha256": "2d942914cfad5a14491c13f9daa62a24b60c0a11f71b34718f76e19b6f5561d3"
+    },
+    {
+      "path": "scripts/build-manifest.py",
+      "bytes": 2463,
+      "sha256": "21e15fe69dd9d92a928c99b1454488aa993dbccc58659657c63b2e77ac28bf48"
+    },
+    {
+      "path": "scripts/new-project.sh",
+      "bytes": 1121,
+      "sha256": "d2018c58b3ca88a2bcc50056e034c034884efa8460bbcbd6e78f2ffffb89249e"
+    },
+    {
+      "path": "scripts/verify-integrity.py",
+      "bytes": 2637,
+      "sha256": "0732e33e290f1bcb46644e906d50e8dcb4193e641381e3793b15efcd46400f77"
+    },
+    {
+      "path": "scripts/verify-origin.py",
+      "bytes": 2591,
+      "sha256": "d1341bac4b741a1866490275d2df28ebaa04a27515741ad500cec71171f1f5ed"
+    },
+    {
+      "path": "session-log.md",
+      "bytes": 269,
+      "sha256": "c6673d370d3fc1b5a78caba7178188b1ea56eca88c559143b42f4b5b6fe2ea2c"
+    },
+    {
+      "path": "tier-1-global/AGENT.md",
+      "bytes": 2004,
+      "sha256": "0fb9173b75562e4dc32a42c5244f037fd1ac177ce23fe9ab390078004dcda8e3"
+    },
+    {
+      "path": "tier-1-global/CLAUDE.md",
+      "bytes": 145,
+      "sha256": "95e086b6f5ba8cacf4747cf056b3fc5e10e26b9763ddafbcafcecad69832b679"
+    },
+    {
+      "path": "tier-1-global/checklists/era-01-to-02.md",
+      "bytes": 1582,
+      "sha256": "0fb3fa5a41ab3df23cbee470e2d3dd257a7644add22d275a0f750906a68fa5b8"
+    },
+    {
+      "path": "tier-1-global/checklists/era-02-to-03.md",
+      "bytes": 2283,
+      "sha256": "a0e4e6ee11bb2c560cb46fbe49a0de996fde30e2b797a1992ca69c749e0fbfb7"
+    },
+    {
+      "path": "tier-1-global/checklists/model-routing.md",
+      "bytes": 609,
+      "sha256": "3087483b71734b4982d634c8a6edd2b89c4340de3faa6ff76804e2b8207d289f"
+    },
+    {
+      "path": "tier-1-global/checklists/new-project.md",
+      "bytes": 2197,
+      "sha256": "2cc66a9533beb9c920686432ca69ab2b4bf254954190bbd5e457572d0031755b"
+    },
+    {
+      "path": "tier-1-global/checklists/pattern-promotion.md",
+      "bytes": 1627,
+      "sha256": "d220fa42c9df929e8d4174d6be7c5c4594c3a265704fdd0a6f853f80f733360c"
+    },
+    {
+      "path": "tier-1-global/checklists/session-closeout.md",
+      "bytes": 478,
+      "sha256": "46c635ea3ad9590983b8ccc2bf21bfca5e7b7aa1d68987d2c72f6ffc65ff1ae6"
+    },
+    {
+      "path": "tier-1-global/checklists/session-start.md",
+      "bytes": 2308,
+      "sha256": "e597ec162c6cbea73c56080522a93c69ef12756b9afa98284c76964d1253537e"
+    },
+    {
+      "path": "tier-1-global/context/tier0.md",
+      "bytes": 1582,
+      "sha256": "db29e47d942fdea32880e9a5c0aca41cf7b5e8f3add520846315bc3b93ad7914"
+    },
+    {
+      "path": "tier-1-global/context/tier1-current.md",
+      "bytes": 235,
+      "sha256": "57e1e0a162ac61da5af04097be0bd0117991cf769fa1e70447ec522963497880"
+    },
+    {
+      "path": "tier-1-global/context/tier1-subsystem/README.md",
+      "bytes": 268,
+      "sha256": "0bc11af9f9e25984c18360475e1086b73c15427c69393bf363a268b4fbb31bb1"
+    },
+    {
+      "path": "tier-1-global/conventions/provenance.md",
+      "bytes": 479,
+      "sha256": "784d485b14e26d1ab4a6666f53a766f0b92196548e0bdd7c024c40bd460ad619"
+    },
+    {
+      "path": "tier-1-global/conventions/session-log-format.md",
+      "bytes": 1637,
+      "sha256": "bf8cfa8a2018dc4eed4bd18801295773dc604c64feafb5fbe864fbeeeaad89be"
+    },
+    {
+      "path": "tier-1-global/conventions/skill-author-guide.md",
+      "bytes": 1915,
+      "sha256": "2bc73147842152d6d679c2caefb765692d535ba58636801747da18c3fef43670"
+    },
+    {
+      "path": "tier-1-global/conventions/style-guide.md",
+      "bytes": 8078,
+      "sha256": "14b5992e2b8c6799d8e15ab1fb9dff1140ea920dd2823639c8e8ce0f7a721af0"
+    },
+    {
+      "path": "tier-1-global/conventions/token-efficiency.md",
+      "bytes": 2606,
+      "sha256": "ab5e9a776cf012bca450779fee648efa73d0a9e182f4dadae0f5fd5c0837dc92"
+    },
+    {
+      "path": "tier-1-global/conventions/trigger-registry.yaml",
+      "bytes": 6568,
+      "sha256": "54b89c5c8815a7426b5f7a1a3594fbba1da1145f254b9aeba16c00c5dae3b921"
+    },
+    {
+      "path": "tier-1-global/skills-core/adoption-captain/SKILL.md",
+      "bytes": 5176,
+      "sha256": "35afeffac9cff0a0c539cbb76b3b1edbe56aff9b46bea77e68162929d02f66ad"
+    },
+    {
+      "path": "tier-1-global/skills-core/adoption-captain/reference/adoption-plan-template.md",
+      "bytes": 9161,
+      "sha256": "b96213b92446e543ac8c33f9a447c15db3d103fe57208fe965c172e9da42f0da"
+    },
+    {
+      "path": "tier-1-global/skills-core/adoption-captain/reference/adoption-report-template.md",
+      "bytes": 10810,
+      "sha256": "8e889bfe00bf821823175ee54bc5fb4cade83211d7838ee0b85a0912f7610783"
+    },
+    {
+      "path": "tier-1-global/skills-core/adoption-captain/reference/discovery-checklist.md",
+      "bytes": 9708,
+      "sha256": "f8431137a8822832b6e2e69bf31ba8a08ac4c280034d6740a8e6493459f04ae2"
+    },
+    {
+      "path": "tier-1-global/skills-core/adoption-captain/reference/mapping-rubric.md",
+      "bytes": 12426,
+      "sha256": "685782b28fbc83425e25c2f55108a01da2170ae51823054549816779e7d85b06"
+    },
+    {
+      "path": "tier-1-global/skills-core/adoption-captain/reference/memory-commit-protocol.md",
+      "bytes": 11062,
+      "sha256": "302c335218b47493abdf76881a13dd2e2466ca5bb9d90eda795e91b96a142c54"
+    },
+    {
+      "path": "tier-1-global/skills-core/adoption-captain/reference/non-breaking-rules.md",
+      "bytes": 7713,
+      "sha256": "d3be464a09a68b22dd6239220ab00875c4819d22184a3fe0d329ed0402008a4c"
+    },
+    {
+      "path": "tier-1-global/skills-core/adoption-captain/reference/preserve-map.md",
+      "bytes": 8282,
+      "sha256": "b5592daa80b74892e6d4d9bb39e901c8a729d16a52b40921fb5d0287c8d8ecf2"
+    },
+    {
+      "path": "tier-1-global/skills-core/adoption-captain/reference/validation-protocol.md",
+      "bytes": 9384,
+      "sha256": "27762041577f5f0a2858962c370c7efd884b8d12388a8f09fb9f4cedbeb58207"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/SKILL.md",
+      "bytes": 3495,
+      "sha256": "0f785f1558a764d46004a3ba650467bc984bbe5b0f0eb276c79fd33e2d7ac2f5"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/concession-discipline.md",
+      "bytes": 6439,
+      "sha256": "fe1798cabbebf2836426f8f4af98fd6457b2a11a118c298c86315bc9e13b17f3"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/cross-feedback-template.md",
+      "bytes": 4838,
+      "sha256": "1ee3c9e89b92c9b343684b24034b9309d13689ee266bf81b33859480139811e6"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/escalation-discipline.md",
+      "bytes": 6595,
+      "sha256": "73490bebb5c26c26f6cd1baa519d0167c3102628f073d796c805264695995e68"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/protocol.md",
+      "bytes": 8885,
+      "sha256": "4c5a286dc5e76d4c024cdaf0ce84a1a9bf4bdef9b69f1cc995cd3ef34d6906a6"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/task-assignment.md",
+      "bytes": 6133,
+      "sha256": "3c71a00060274700a0af9deacf350a7a2b3c8dbe86d504b58d057fa2fc48b5c2"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/voting-format.md",
+      "bytes": 5255,
+      "sha256": "19368727da634ae9e2a79b2c67925b7775629aa7f1c9669e7f37daff19c8629f"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/when-to-convene.md",
+      "bytes": 8375,
+      "sha256": "f0bd01aee0c4de0897051e220eaddda4a92b994d323ed3977c7ee51a036c68f9"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-planning/reference/worked-example.md",
+      "bytes": 11462,
+      "sha256": "8a1e41b7440d936aa4b692e5f714d8590a840b0b0397bf86b5594d9aa8b2442d"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/SKILL.md",
+      "bytes": 3767,
+      "sha256": "2cc016699f3960e1f7974271a5d88fe65989a824dcbc24685d84f86718d3cc70"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/agent-strengths.md",
+      "bytes": 5027,
+      "sha256": "f46ae1c137802f73f19fc6e3bcf3718580e020e1ebef6b36b1114201e72c4388"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/critique-format.md",
+      "bytes": 4517,
+      "sha256": "8310ffc8713ae7d041a3e044023ac2febd9bc6f1d6d97b4de4e0695fae8dbbea"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/loop-4-recovery.md",
+      "bytes": 8236,
+      "sha256": "9e9d61f7d338bb8380cb52affb39b40ab7a36495233c1c8610f0b6358dda249a"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/merge-framework.md",
+      "bytes": 8818,
+      "sha256": "c6b72f35fb6c82131bd23b7f73e041e02ebe4b73b6d67bc6213ea92bab7fb634"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/protocol.md",
+      "bytes": 6514,
+      "sha256": "3a90f3857d55c85b31b4e81830bb713d9e2b261f9ad0c0f911339b2d75fd5997"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/roles.md",
+      "bytes": 3837,
+      "sha256": "4edf4434d14d0bd224231488cb3360bb2f1a65016574438f1278fb6e0faac253"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/scorecard-rubric.md",
+      "bytes": 13539,
+      "sha256": "94b4295feaf1db8d50ddf976bfbc9ab411a121db1e3cf2c2de7307bf5caeabd8"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/when-to-convene.md",
+      "bytes": 3816,
+      "sha256": "d18558c4151b203918d38269058847294ac3adc6b34a4aa39cefac6199f5b193"
+    },
+    {
+      "path": "tier-1-global/skills-core/agent-panel-review/reference/worked-example.md",
+      "bytes": 7354,
+      "sha256": "0fe683548a825b89e824f2d6508256e31f0e6612305ad10861b6aded083a2151"
+    },
+    {
+      "path": "tier-1-global/skills-core/context-loader/SKILL.md",
+      "bytes": 1252,
+      "sha256": "54a7659d2f4564be5fd0a33f62e862bee761e7cd6922a7f4e43026b6aa380e2a"
+    },
+    {
+      "path": "tier-1-global/skills-core/engagement-bootstrap/SKILL.md",
+      "bytes": 1821,
+      "sha256": "e5ef71d65576e76f4ae3429e7ed9dabe83ebdd14863812c548ae742d943fbd5d"
+    },
+    {
+      "path": "tier-1-global/skills-core/goal-runner/SKILL.md",
+      "bytes": 2650,
+      "sha256": "529c81ea071145339f2cd3088fa8fcf221341ca735d4d4c9b3d31ed856c1ae04"
+    },
+    {
+      "path": "tier-1-global/skills-core/goal-runner/reference/claude-goal-adapter.md",
+      "bytes": 1492,
+      "sha256": "ab733c0c89852544d270e12c628b40b772767dfe573977d9f15979839876b682"
+    },
+    {
+      "path": "tier-1-global/skills-core/goal-runner/reference/durable-loop.md",
+      "bytes": 2582,
+      "sha256": "89a89b9b85b4f430e6ad8dfd876059a69384a9bd91c7e2dfe2dcc5d164c4a483"
+    },
+    {
+      "path": "tier-1-global/skills-core/goal-runner/reference/goal-contract.md",
+      "bytes": 1991,
+      "sha256": "98a1526995440ea90bc337f91f6a5eac2398990d0a5e397a9eb2075892f3480c"
+    },
+    {
+      "path": "tier-1-global/skills-core/pattern-promoter/SKILL.md",
+      "bytes": 1431,
+      "sha256": "eb641817ca640cab884c2735e06c2808e227c8156afa61c947206adaf0a2788e"
+    },
+    {
+      "path": "tier-1-global/skills-core/provenance-check/SKILL.md",
+      "bytes": 672,
+      "sha256": "85f58426dd61251be2897896717a6ca9f75e03b55bc56544908b5a55cded8976"
+    },
+    {
+      "path": "tier-1-global/skills-core/quality-gate/SKILL.md",
+      "bytes": 2490,
+      "sha256": "01ed9b7ed8b98c9c14a0d80a58422bacd992ba5847a511984f85d7e40ea181e7"
+    },
+    {
+      "path": "tier-1-global/skills-core/release-captain/SKILL.md",
+      "bytes": 4744,
+      "sha256": "b4ab2137a9b7960f21dbab90ea49469244d4f52385ef184f1c7fd23d2b1efd20"
+    },
+    {
+      "path": "tier-1-global/skills-core/release-captain/reference/checklist.md",
+      "bytes": 8863,
+      "sha256": "9ffe4ca6b71087b767d2655005294b6887987e09dd2001a3cc858805b8f9f401"
+    },
+    {
+      "path": "tier-1-global/skills-core/release-captain/reference/origin.md",
+      "bytes": 3339,
+      "sha256": "4afb5d3abf97a450416d2b295dfa69f469453757b8cc831a7215bd959e3f9416"
+    },
+    {
+      "path": "tier-1-global/skills-core/release-captain/reference/output-template.md",
+      "bytes": 5675,
+      "sha256": "4c41ecfbb849d3e309d643229dd4ba9f651a7dbb37b744cfa0096c54e8726f2c"
+    },
+    {
+      "path": "tier-1-global/skills-core/release-captain/reference/verification-protocol.md",
+      "bytes": 7054,
+      "sha256": "5bac0a1957dd0425a4094988ada29a24ba17314c97fa2ed9701ae16e48dcf0d3"
+    },
+    {
+      "path": "tier-1-global/skills-core/request-router/SKILL.md",
+      "bytes": 2661,
+      "sha256": "410c0a1c9bebf061e69510a5813968bb43b7fb1bf3a8944e6ed8dde1420423de"
+    },
+    {
+      "path": "tier-1-global/skills-core/request-router/reference/compound-requests.md",
+      "bytes": 2021,
+      "sha256": "baeef9de1462b23d02d3b472b0315952125270201fec1b340b5b5782bcefdac4"
+    },
+    {
+      "path": "tier-1-global/skills-core/request-router/reference/panel-offer-threshold.md",
+      "bytes": 7357,
+      "sha256": "093f8c6ad7c432b291c95b7509a2ade3a0d2b57a63ccd249c8c6aae5373a0f7e"
+    },
+    {
+      "path": "tier-1-global/skills-core/request-router/reference/router-rationale.md",
+      "bytes": 5912,
+      "sha256": "50a44d8169db3160252499d94fb40e8d9466d5501d6656390788a0432d18671c"
+    },
+    {
+      "path": "tier-1-global/skills-core/token-economist/SKILL.md",
+      "bytes": 1491,
+      "sha256": "1d0e20c32caac72a8b2a217f7bb300c841a82b690a0a0511676813163f1de7a0"
+    },
+    {
+      "path": "tier-1-global/skills-core/trigger-indexer/SKILL.md",
+      "bytes": 1474,
+      "sha256": "60c5dcf67ea0bec59556d66a3ce70804d511ef682389d10e6cfd16a61c9a8b9e"
+    },
+    {
+      "path": "tier-1-global/skills-core/trigger-indexer/reference/registry-schema.md",
+      "bytes": 1312,
+      "sha256": "158e9d5515b93bb4083a3dfd0bff8876e9f4c566762611767bf291a8bfb2f864"
+    },
+    {
+      "path": "tier-2-capabilities/AGENT.md",
+      "bytes": 2063,
+      "sha256": "bb3ef34ab3210de6c84cae91fb2699d6c24d01bed6ccc289871e99b7c2b04772"
+    },
+    {
+      "path": "tier-2-capabilities/CLAUDE.md",
+      "bytes": 145,
+      "sha256": "95e086b6f5ba8cacf4747cf056b3fc5e10e26b9763ddafbcafcecad69832b679"
+    },
+    {
+      "path": "tier-2-capabilities/skills/autoresearch/SKILL.md",
+      "bytes": 508,
+      "sha256": "7e7aef8750b867200655b815fe05abe8d0641e5019639fbd5037a800cb09ddab"
+    },
+    {
+      "path": "tier-2-capabilities/skills/autoresearch/references/autonomous-loop-protocol.md",
+      "bytes": 6378,
+      "sha256": "c5072cf07514a166aac89abc455417251d9d9be22b376e52ac058243038486cf"
+    },
+    {
+      "path": "tier-2-capabilities/skills/autoresearch/references/autoresearch-full-spec.md",
+      "bytes": 5465,
+      "sha256": "adb1a7e544506b990c0b389a13f7fc7317e0aa6f665f3529de4a04c6971f9db0"
+    },
+    {
+      "path": "tier-2-capabilities/skills/autoresearch/references/core-principles.md",
+      "bytes": 3970,
+      "sha256": "ea044cc4d5cdc566ab113e48ee6014de3f9b8b1f99906d56764b85291d8f3183"
+    },
+    {
+      "path": "tier-2-capabilities/skills/autoresearch/references/plan-workflow.md",
+      "bytes": 4540,
+      "sha256": "ff2813d2ae193f0928b78f12bbc7e1608385c437ec98ca5ace0ae23760b4a62b"
+    },
+    {
+      "path": "tier-2-capabilities/skills/autoresearch/references/results-logging.md",
+      "bytes": 2623,
+      "sha256": "1fd5020b031e43d34a1891051ea988328d9440ebdb8717284a7b985d28fb1167"
+    },
+    {
+      "path": "tier-2-capabilities/skills/autoresearch/references/security-workflow.md",
+      "bytes": 35531,
+      "sha256": "02e7016f4d881636a043dd80d6ed6907b60045fe87e7a7a01de3d5f266177279"
+    },
+    {
+      "path": "tier-2-capabilities/skills/code-audit/SKILL.md",
+      "bytes": 502,
+      "sha256": "1332a8918fa544c1668c54d0c400e844c512fa3dc5e5e62251282f3c80e9dec5"
+    },
+    {
+      "path": "tier-2-capabilities/skills/code-audit/reference/code-audit-full-spec.md",
+      "bytes": 2246,
+      "sha256": "bbdba8b15fdc1a510379dc1acec46ac1e455fd137e79e3f2a58062a4dfca47de"
+    },
+    {
+      "path": "tier-2-capabilities/skills/consequence-simulation/SKILL.md",
+      "bytes": 2399,
+      "sha256": "90880d9703aa8b33a96233637e6b5404d9d3f439ef847b0b97bcbf44793d003a"
+    },
+    {
+      "path": "tier-2-capabilities/skills/consequence-simulation/reference/protocol.md",
+      "bytes": 9578,
+      "sha256": "c3501aad18cd23f44fe566ec599d8ee32e4dbf97aae970351aacc176cb0886d1"
+    },
+    {
+      "path": "tier-2-capabilities/skills/convergence-detection/SKILL.md",
+      "bytes": 2631,
+      "sha256": "8ae298acfa33f103e0d0de513465aea9422c579129aa6e5d7f57fd14e1688699"
+    },
+    {
+      "path": "tier-2-capabilities/skills/convergence-detection/reference/protocol.md",
+      "bytes": 9974,
+      "sha256": "be4c7f4fccc531a5e40f30bc977938bd28f5ec04301943e47c2b85ecbdcba02b"
+    },
+    {
+      "path": "tier-2-capabilities/skills/cross-domain-translation/SKILL.md",
+      "bytes": 2345,
+      "sha256": "9dc56e7803948a4c24569b031f2699588d9019ba21bf8cc74a049443c3e7a1dd"
+    },
+    {
+      "path": "tier-2-capabilities/skills/cross-domain-translation/reference/protocol.md",
+      "bytes": 9600,
+      "sha256": "b32d2f7beadcd3b54c7f8ada6dc0c9fe4e29a8c6c395712c555a7f079ca437eb"
+    },
+    {
+      "path": "tier-2-capabilities/skills/detached-judgment/SKILL.md",
+      "bytes": 2888,
+      "sha256": "9b65e49b047943cd092fd700c15e6e38bef8a6a43df7c0ee095eea8d2e6377b5"
+    },
+    {
+      "path": "tier-2-capabilities/skills/detached-judgment/reference/protocol.md",
+      "bytes": 11157,
+      "sha256": "98a9f6d0b51725a2557148ac860298d93a24453feb48466605ad17fe19319e83"
+    },
+    {
+      "path": "tier-2-capabilities/skills/loop-engineering/SKILL.md",
+      "bytes": 1022,
+      "sha256": "ecd38ecb920833e7fef6838ebadc5f4ea1db96fe58337cb99db7a0dcfcb8dbe4"
+    },
+    {
+      "path": "tier-2-capabilities/skills/loop-engineering/references/loop-engineering-full-spec.md",
+      "bytes": 6518,
+      "sha256": "09f1ee413d67ca1e93cdc0d3986b40189b28e2be484ccf290cf54b39c57f1a98"
+    },
+    {
+      "path": "tier-2-capabilities/skills/nod-protocol/SKILL.md",
+      "bytes": 2977,
+      "sha256": "29dfc2a2d4b5518948ed9a671ebad7834dbe01c6484e7d139f69769dae60d3c8"
+    },
+    {
+      "path": "tier-2-capabilities/skills/nod-protocol/reference/anti-patterns.md",
+      "bytes": 4788,
+      "sha256": "afbda43ee2fdd4aa5b5d41ad183f6fc03f57847d7526028294ee25bf4492d1eb"
+    },
+    {
+      "path": "tier-2-capabilities/skills/nod-protocol/reference/gates.md",
+      "bytes": 5569,
+      "sha256": "9b5de50507a5742b29411fe381d54869ec11b505681a4478f5069296a68b1cd9"
+    },
+    {
+      "path": "tier-2-capabilities/skills/nod-protocol/reference/origin.md",
+      "bytes": 2194,
+      "sha256": "1b4050df7fcc47b4680b6c99ede063db48dd702565219d72d0961970e8becc2b"
+    },
+    {
+      "path": "tier-2-capabilities/skills/nod-protocol/reference/output-template.md",
+      "bytes": 3545,
+      "sha256": "5e4c0d5bc728762e1f100499a742d8d962323201304cf087ebf35849d2e48960"
+    },
+    {
+      "path": "tier-2-capabilities/skills/parallel-lens-synthesis/SKILL.md",
+      "bytes": 2108,
+      "sha256": "aaeb612464f2ce450d0617ddd651b092997ce79a3dd191c1428326124eea251d"
+    },
+    {
+      "path": "tier-2-capabilities/skills/parallel-lens-synthesis/reference/protocol.md",
+      "bytes": 8644,
+      "sha256": "c136b35fddd4a165e099bc623824ebfa796936c5ac4c95dda9ab3165af2ad32f"
+    },
+    {
+      "path": "tier-2-capabilities/skills/pressure-test/SKILL.md",
+      "bytes": 3187,
+      "sha256": "060d9d76c2ee75149eed81926594cc6c9d15246206d09d0f6fc47f0e4a50733e"
+    },
+    {
+      "path": "tier-2-capabilities/skills/pressure-test/reference/lenses.md",
+      "bytes": 6677,
+      "sha256": "cc014b91c54bf7151f44466fcab0de773b5e4f28340589a21b71e653f4f3ef71"
+    },
+    {
+      "path": "tier-2-capabilities/skills/pressure-test/reference/output-template.md",
+      "bytes": 5588,
+      "sha256": "5a7752c3e525cb0348429046f8d050c40288319829acd5020d728b63e23884b3"
+    },
+    {
+      "path": "tier-2-capabilities/skills/pressure-test/reference/scope-modes.md",
+      "bytes": 4787,
+      "sha256": "c7dca401c65e7f5f1f8ef576b833b77cf917330872818748567baea3df887055"
+    },
+    {
+      "path": "tier-2-capabilities/skills/simulation-to-action-bridge/SKILL.md",
+      "bytes": 2872,
+      "sha256": "68f16ce927af1a585ceba46cab399196653054278b32ee6de7051133c1383193"
+    },
+    {
+      "path": "tier-2-capabilities/skills/simulation-to-action-bridge/reference/protocol.md",
+      "bytes": 10867,
+      "sha256": "38d933c75369dabd0e2221c47f38716eeaba1dd391fa91a2be4195bed1ba3315"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/SKILL.md",
+      "bytes": 511,
+      "sha256": "fb269198eb8cfbdbe55c779e4bd574d8ad83d012b7c64502e591b8470ceac643"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/agents/analyzer.md",
+      "bytes": 10435,
+      "sha256": "851f8bd7ca6b16073723b03d2f7db7c769d9bdfe71b0ac5010176aabd050488c"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/agents/comparator.md",
+      "bytes": 7346,
+      "sha256": "6d1b229968e6acf6fd2336fe9dd1b8c5f53ec8f2275c349398da21ae41d84a02"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/agents/grader.md",
+      "bytes": 9049,
+      "sha256": "12f2e9bb79c0869ba87356b1faa7c275d82fe2470bd834a167c038e52591f374"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/eval-viewer/generate_review.py",
+      "bytes": 16366,
+      "sha256": "2179b402e3090908666d58ac4acb215158b99b8567850d4c8e8adba71f7d6e1a"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/references/schemas.md",
+      "bytes": 12120,
+      "sha256": "43b020921e96518b82bea851c01a7f61f7ba3cb9b6a3d11f4c1224c0db42d1cf"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/references/skill-creator-full-spec.md",
+      "bytes": 32923,
+      "sha256": "77e9182f18bd894d3f293928aa3536e3276a305cd2cb2f2b156d8fbb39fd168e"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/scripts/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/scripts/aggregate_benchmark.py",
+      "bytes": 14387,
+      "sha256": "2cd9c983b31d5af9f63cac95a4839283672afbc1f47fa6c27c4510de95ef8b41"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/scripts/generate_report.py",
+      "bytes": 12848,
+      "sha256": "4a947a1045687dea9276b10d6b330f3005bf058c8b07e17e24862384e7509ebd"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/scripts/improve_description.py",
+      "bytes": 11117,
+      "sha256": "5b006bc0f632800a277dd698a25128af646cbc3fe829b3295e337b4354918b44"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/scripts/package_skill.py",
+      "bytes": 4235,
+      "sha256": "147c87b08ef9522612e6d79562cd5bd6d325c0062b5afd553c541389c3041143"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/scripts/quick_validate.py",
+      "bytes": 3973,
+      "sha256": "02a62f0dee9094033a43fd8481fa17449844a4cefaf20ec5cb0356621f9b1fff"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/scripts/run_eval.py",
+      "bytes": 11465,
+      "sha256": "e697cbba587a63e5e2f84751a306a30fad283c94fb46b7be1e3bc3c055bfd95b"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/scripts/run_loop.py",
+      "bytes": 13606,
+      "sha256": "1ddb0b42b280416d14e97131b0989ec0dd7ada5ac3a24b779e1d74c1327fd37a"
+    },
+    {
+      "path": "tier-2-capabilities/skills/skill-creator/scripts/utils.py",
+      "bytes": 1662,
+      "sha256": "9bba353651183de54051c89601e13f042e2be750f5082f874c2dbc7164ff9462"
+    },
+    {
+      "path": "tier-2-capabilities/skills/stakeholder-mapping/SKILL.md",
+      "bytes": 2448,
+      "sha256": "710a1c72ff4e8edbef7308f0ca9465726faff94758f1023ae63844b6e378d858"
+    },
+    {
+      "path": "tier-2-capabilities/skills/stakeholder-mapping/reference/protocol.md",
+      "bytes": 2680,
+      "sha256": "dad57eb2f31ecb175705a309820d2b226f180b73787ef4e436265e543a7daba3"
+    },
+    {
+      "path": "tier-2-capabilities/skills/team-router/SKILL.md",
+      "bytes": 5425,
+      "sha256": "ed06f0f8efdc3d474a485340374134953fb3f2cc4c35ca55ade4beb4672925af"
+    },
+    {
+      "path": "tier-2-capabilities/skills/team-router/templates/daily-log.md",
+      "bytes": 1562,
+      "sha256": "be72b0415ab0aefd30abebe75cd2d9beb13e7a57550cb48403b1d4f20482031c"
+    },
+    {
+      "path": "tier-2-capabilities/skills/team-router/templates/routing-registry.md",
+      "bytes": 1659,
+      "sha256": "9671cab86b176370c39c3568cd57c1ba59362e50d6d662680f192fb6c4ad23cf"
+    },
+    {
+      "path": "tier-2-capabilities/skills/team-router/templates/team-ledger.md",
+      "bytes": 2767,
+      "sha256": "10d747cb692565a8e5f00a87a2c9aba6b5be392520d9cc8884f587e11d248092"
+    },
+    {
+      "path": "tier-2-capabilities/skills/ultra-think/SKILL.md",
+      "bytes": 1727,
+      "sha256": "95027bbdefcbdb3b76037b2d6670d0ebb61b29c08303106b5d1f201fb802633a"
+    },
+    {
+      "path": "tier-2-capabilities/skills/ultra-think/reference/ultra-think-framework.md",
+      "bytes": 1451,
+      "sha256": "2750a774f71456954187cfb5451799544fcc8606f6ada7819162a4a2e58c46a9"
+    },
+    {
+      "path": "tier-2-capabilities/skills/viz/SKILL.md",
+      "bytes": 4200,
+      "sha256": "0eadffb6f786abf1836dff1a7ce6a98e740d29cb2766720f4b4347b154721323"
+    },
+    {
+      "path": "tier-2-capabilities/skills/viz/reference/canon.md",
+      "bytes": 4700,
+      "sha256": "9a44f20131e375c83258f8c0c7881abdb533bc3d811ed5735a666b2b89c6bde5"
+    },
+    {
+      "path": "tier-2-capabilities/skills/viz/reference/critique-protocol.md",
+      "bytes": 4447,
+      "sha256": "f8a6144323baaf95c15992e3b5b60b2f20b911a1dfa102c7f97826cd15964f3d"
+    },
+    {
+      "path": "tier-2-capabilities/skills/viz/reference/nyt-graphics.md",
+      "bytes": 4236,
+      "sha256": "997d5e219f440f432345515b51f4977157b736d492ad51b682e230883ada7705"
+    },
+    {
+      "path": "tier-2-capabilities/skills/viz/reference/prompts.md",
+      "bytes": 9713,
+      "sha256": "85d0ba1e0ef20ffad7885ac165db0a4f9fbcffc8b97dc06af95b0f605c4833f9"
+    },
+    {
+      "path": "tier-2-capabilities/skills/viz/reference/rules.md",
+      "bytes": 6484,
+      "sha256": "64a2a4d0529914a5c04ef6545176087cdce4b0293a42089c58d5101902a88b79"
+    },
+    {
+      "path": "tier-2-capabilities/skills/viz/reference/taxonomy.md",
+      "bytes": 10089,
+      "sha256": "e4662efc523d952d582abb0165691e3658a0a1991b7a90598b8668b00d4027ba"
+    },
+    {
+      "path": "tier-2-capabilities/templates/lineage-record.md",
+      "bytes": 1774,
+      "sha256": "7f1416d1bc3c74e40213ebe059a5888a41afb376fb1dc09f342ff43270c40fe6"
+    },
+    {
+      "path": "tier-2-capabilities/templates/loop-spec.md",
+      "bytes": 1212,
+      "sha256": "daa7917a90a32a811b19d33c9019b7e8f138bdd612c4d653cf1b3dc6b7272e98"
+    },
+    {
+      "path": "tier-2-capabilities/templates/model-routing.md",
+      "bytes": 1934,
+      "sha256": "c6ae3235a3ab050f8f2c8ef42ffb652cf7e1a6cb75071ff49e96706213d32e7b"
+    },
+    {
+      "path": "tier-2-capabilities/templates/quality-gates.md",
+      "bytes": 1726,
+      "sha256": "7ee1d2cc7d91105c3e1eb54c122a2d4a38c9d952d7f50eda29ba292ab018863d"
+    },
+    {
+      "path": "tier-2-capabilities/templates/token-budget.md",
+      "bytes": 1822,
+      "sha256": "7eab8184fb30f77b86ec84dabf0cde812ea42963e2e35648da1d0933ca3b58c4"
+    },
+    {
+      "path": "tier-3-shells/AGENT.md",
+      "bytes": 2184,
+      "sha256": "4cc86421c54539369c2a6aa0c7f70d8e5f46c2ead6bb294a3a67d593e1dc8bc4"
+    },
+    {
+      "path": "tier-3-shells/CLAUDE.md",
+      "bytes": 145,
+      "sha256": "95e086b6f5ba8cacf4747cf056b3fc5e10e26b9763ddafbcafcecad69832b679"
+    },
+    {
+      "path": "tier-3-shells/course-shell/README.md",
+      "bytes": 3365,
+      "sha256": "42eeb12d8004d3f19d9abfbdb9fcdab481a23691604e91dd5529373cf41b73f7"
+    },
+    {
+      "path": "tier-3-shells/mission-control/README.md",
+      "bytes": 3747,
+      "sha256": "81236f383b7a1d2cffd419c2d9c957a98590afabd64533b95124f3b8a7e9e729"
+    },
+    {
+      "path": "tier-3-shells/scroll-shell/README.md",
+      "bytes": 3697,
+      "sha256": "ba930ab0336b7c4cf5b9fca3369d588e79f871305d107c9f85e16b496cc7a3dd"
+    },
+    {
+      "path": "tier-3-shells/slide-shell/README.md",
+      "bytes": 3301,
+      "sha256": "5e35f93329a026b6c54b0daa93e1a7d94e2b94871acf7558e4d61e2e9f8879f3"
+    }
+  ],
+  "generated_at": "2026-06-18T21:59:10.232427+00:00"
+}

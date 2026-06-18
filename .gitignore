@@ -1,12 +1,4 @@
-# Runtime artifacts (regenerate from refresh.py; never shipped)
+
+# Team edition: Command Center runtime artifacts
 command-center/task_state.json
 command-center/command-center.html
-
-# Local capability overrides (power-user values stay off the shared tree)
-capability-profile.local.md
-*.local.md
-
-# OS / Python noise
-.DS_Store
-__pycache__/
-*.pyc
