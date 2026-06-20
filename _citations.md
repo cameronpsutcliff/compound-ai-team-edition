@@ -1,5 +1,5 @@
 # Citations Registry
-# Compound AI Operating Standards v2.7.0
+# Compound AI Operating Standards v3.0.7
 # Source: cameronsutcliff.com/compound-ai | License: Apache 2.0
 
 This file is the canonical attribution registry. Citation markers in the
@@ -34,6 +34,13 @@ The reader's tooltip shows Name + Contribution. Link renders as a clickable
 **Name:** Adam Federman
 **Contribution:** The NOD opposite-perspectives protocol pattern (gated opposite-construction without emotion) and the standing-panel-vs-convened-panel design observation surfaced during cross-kit review.
 **Where in the kit:** `nod-protocol` skill (origin file); `agent-panel-planning/reference/when-to-convene.md` (standing-vs-convened section).
+**Link:** _
+
+## michael-sutcliff
+
+**Name:** Michael Sutcliff
+**Contribution:** The CEO operating-lens framework adapted into the pressure-test skill (ten mental models including Multiples-not-percentages, Iceberg Test, Hope-Not-Strategy, and Domain Ownership).
+**Where in the kit:** `pressure-test/reference/lenses.md`.
 **Link:** _
 
 ## stephen-few
@@ -108,7 +115,7 @@ The reader's tooltip shows Name + Contribution. Link renders as a clickable
 
 ## panel-coordination-v1
 
-**Name:** the original three-agent build panel
+**Name:** Claude, Kiro, and Codex (the three-agent build of v1)
 **Contribution:** The original three-agent file-based handoff that produced v1.0.0 of this kit. The panel-review and panel-planning patterns in v2.1-v2.2 are formalizations of what worked in that build.
 **Where in the kit:** `agent-panel-review`, `agent-panel-planning`, Field Guide Chapters 31 and 32.
 **Link:** _
@@ -149,6 +156,9 @@ parse the citation extension.
   critique format, the five-gate NOD adaptation, the strength-matched
   task assignment from demonstrated dominance). These are this kit's
   own contributions.
+- **The kit's own operational provenance** (the reliability incident
+  behind the foreword, the IIP proof point). Not citations; they are the
+  kit's own provenance.
 
 If a contribution warrants a citation entry, add it here. The registry
 is the single source of truth.

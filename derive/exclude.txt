@@ -1,0 +1,47 @@
+# exclude.txt
+#
+# Paths omitted from the Individual (lean) edition. For --edition individual,
+# derive.sh skips these from BOTH the derived tree AND the release zip (see
+# should_skip_copy). For --edition team, this file is ignored entirely and the
+# full derived tree ships. Paths are relative to the derived kit root.
+#
+# D-002 (revised v3.0.1): reference-impl/ now ships in BOTH editions (see the
+# note lower in this file), so it is intentionally NOT listed below. The
+# Individual (lean) zip excludes the canonical working docs, derive/, and team/
+# via derive.sh --edition individual. The Team (complete) zip ignores this file
+# and includes the full derived tree.
+#
+# Lines beginning with # and blank lines are ignored.
+
+# Canonical working docs
+docs/FINAL-REVIEW.md
+docs/HG-2-DEBATE.md
+docs/derived-not-typed.md
+docs/brief-standard.md
+docs/WEBSITE-COPY.md
+docs/PUBLICATION-CHECKLIST.md
+docs/FRESH-SESSION-DRY-RUN.md
+adoption-report.md
+delegation.md
+project-scaffold.md
+project-internal-structure.md
+AGENT.annotated.md
+
+# Design input only (family framing, private vault/repo names)
+_reference/josh-merge/blend-system.md
+
+# Team edition org layer (Individual lean zip omits team/; Team edition includes it)
+team/
+
+# reference-impl/ now ships in BOTH editions (v3.0.1): adopters are told by 15+
+# docs to run reference-impl/scripts/verify-integrity.py and verify-origin.py to
+# verify what they downloaded. The verifiers are stdlib-only and self-contained;
+# the pattern code and skill-creator are legitimate developer reference material.
+# It is not tier-0 loaded, so this does not affect the lean session-start claim.
+
+# Derive tooling stays in git, not in the Individual starter-kit zip
+derive/
+
+# Maintainer-only local leak denylist (literal personal terms). Gitignored and
+# not copied unless deliberately listed in include.txt.
+leak-denylist.local.txt

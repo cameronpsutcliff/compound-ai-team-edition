@@ -2,24 +2,26 @@
 
 *A field guide for token economics, repeatable engagement, and durable agentic systems.*
 
-**Version:** 1.0.0
-**Status:** Released.
-**Author:** Cameron Sutcliff
-**Canonical source:** `github.com/cameronpsutcliff/compound-ai-operating-standards`
+**What this is:** the deep reference for the kit, the why behind the way it is
+built. It is NOT required reading to adopt the kit; the README, `EXECUTIVE.md`,
+and `adoption/ADOPT.md` are. Read this when you want the full reasoning.
+**Author:** Cameron Sutcliff (the field guide is the authored manual; the kit
+and its enforced runtime are co-owned with Joshua Sutcliff, see `NOTICE`).
+**Canonical source:** `github.com/cameronpsutcliff/compound-ai`
 **Landing page:** `cameronsutcliff.com/compound-ai`
-**License:** CC BY 4.0 (docs), Apache 2.0 (code samples). See `compound-ai-starter-kit/LICENSE.md`.
+**License:** CC BY 4.0 (docs), Apache 2.0 (code samples). See `LICENSE`.
 
 ---
 
 ## Foreword
 
-I run several agentic systems on one machine. Together they produce scheduled analytical reports, run an automated outreach workflow, coordinate a control plane for other agents, draft content under a voice profile, and run a background simulation. They share one human operator and zero API spend beyond a subscription. The interesting part is not that they all run. The interesting part is that they did not always.
+I run several agentic systems on one machine. Together they produce daily competitive briefs across 22 verticals, run an automated outreach pipeline for a directory site, schedule and triage a control plane for several other agents, ghostwrite a social presence under a voice profile, and paper-trade a strategy I am no longer working on. They share one human operator and zero API spend beyond a subscription. The interesting part is not that they all run. The interesting part is that they did not always.
 
-The failure that made this manual necessary was an overnight intelligence run that should have been routine. The system was supposed to process a full batch of scheduled reports. By morning, the majority were gone. The root cause was not a model outage, a bad prompt, or a missing API key. It was a cache that opened its own SQLite handle on every LLM call. On paper, the system had a single-writer architecture. In production, one path around that discipline was enough to make the work collapse.
+The failure that made this manual necessary was an overnight intelligence run that should have been routine. The system was supposed to process 22 verticals. By morning, 18 were gone. The root cause was not a model outage, a bad prompt, or a missing API key. It was a cache that opened its own SQLite handle on every LLM call. On paper, the system had a single-writer architecture. In production, one path around that discipline was enough to make the work collapse.
 
 The fix was not more prompting. It was shared connection threading through a ContextVar, cache attribution, phase-level observability, and a rule that any automated workflow downstream of an LLM boundary has to be durable enough to fail visibly and recover cleanly. That is the difference between a clever AI demo and an operating system for repeatable work.
 
-That incident is in this manual because it cost real work and taught a real pattern. Every other pattern here has the same provenance. None of this came from a deck. It came from production, and it was paid for in tokens and an unplanned recovery session.
+That incident is in this manual because it cost real work and taught a real pattern. Every other pattern here has the same provenance. None of this came from a deck. It came from production, and it was paid for in tokens, sleep, and one Sunday morning when I'd rather have been elsewhere.
 
 The frame this manual offers is simple. **Most AI work resets.** Every session re-explains the project. Every synthesis rebuilds from zero. Every expensive call runs whether or not the inputs changed. Every output dies the moment it is read. The cost is silent and continuous, and it is the reason most organizations report "we tried AI and it did not stick."
 
@@ -59,6 +61,8 @@ Read the next page if any of this sounded right.
 ---
 
 ## Part I. The Frame
+
+> **Status:** Complete. Owner: Claude. Phase E delivered.
 
 ### Chapter 1. Does it compound, or does it reset?
 
@@ -250,13 +254,15 @@ Fulfilled in Part V, Quality, Lineage, and Reliability.
 - Chapter 24 (The Quality Immune System) is the defense against silent degradation.
 - Chapter 25 (The So What Test) is the final quality gate before an output ships.
 
-**Beyond the three promises.** Part VI covers the operational discipline that makes the standards repeatable across projects and platforms: the promotion rule, governance, the new-project checklist, cross-platform translation, and a chapter on when AI is the wrong tool. Part VII shows one worked example, before and after, with real numbers from a real production system. The appendices ship the substitution table, the anti-pattern catalog, the glossary, the citation index, and the further reading.
+**Beyond the three promises.** Part VI covers the operational discipline that makes the standards repeatable across projects and platforms: the promotion rule, governance, the new-project checklist, cross-platform translation, and a chapter on when AI is the wrong tool. Part VII shows one worked example, before and after, with real numbers from a real production system. The appendices ship the substitution table, the anti-pattern catalog, the glossary, and the further reading.
 
 Read the parts that match the promise you are most ready to act on. The patterns compose. None of them depends on the others to deliver value; all of them compound when stacked.
 
 ---
 
 ## Part II. Context and Memory
+
+> **Status:** Complete. Owner: Kiro. Phase C delivered.
 
 ### Chapter 7. The Operating Contract
 
@@ -458,11 +464,40 @@ It does not contain the implementation itself. The implementation lives in the s
 
 **The `_map.md` companion.** The skills index handles capability routing. The `_map.md` handles navigation. It is a short file that tells the session where things live in the project: upstream pointers, downstream pointers, child directories, and the files that matter most. Together, `AGENT.md` plus `_skills-index.md` plus `_map.md` give the session everything it needs to orient without loading anything it does not need.
 
+**Universal skill routing for multi-agent machines.** When more than one
+agent runtime is active on the same machine, the skills-routing pattern needs
+one more layer. Each agent should keep the native skill directory its runtime
+expects, but shared skills should route to one canonical master directory.
+Claude can keep reading `~/.claude/skills`, Codex or OpenSpace can keep reading
+`~/.agents/skills`, and Codex-specific skills can remain in `~/.codex/skills`.
+The shared skill itself lives once, for example:
+
+```text
+~/.compound-ai/skills/spotlight
+```
+
+The runtime roots point to it:
+
+```text
+~/.claude/skills/spotlight -> ~/.compound-ai/skills/spotlight
+~/.agents/skills/spotlight -> ~/.compound-ai/skills/spotlight
+```
+
+This is the difference between two agents having similarly named local skills
+and two agents actually sharing one capability. It prevents drift, makes
+improvements propagate immediately, and keeps token economics intact because
+the agent still loads only the pointer skill it needs. The rule is simple:
+edit the canonical skill first, then verify no runtime root has drifted. The
+starter kit convention lives at
+`doctrine/conventions/universal-skill-routing.md`.
+
 The starter kit ships all three. The annotated versions explain every section. The clean versions are ready to deploy.
 
 ---
 
 ## Part III. Token and Cost Optimization
+
+> **Status:** Complete. Owner: Kiro. Phase C delivered.
 
 ### Chapter 12. LLM Response Caching
 
@@ -768,6 +803,8 @@ This tree prevents the most expensive kind of waste: rerunning synthesis because
 
 ## Part IV. Execution and Orchestration
 
+> **Status:** Complete. Owner: Kiro. Phase C delivered.
+
 ### Chapter 17. Model Routing by Cognitive Load
 
 *Who this chapter is for: anyone paying for a frontier model to do work a local model could handle.*
@@ -781,7 +818,7 @@ Route by task type, not by convenience.
 | Parsing, classification, extraction, formatting | Local or smallest available | No design judgment needed. Zero or near-zero cost. |
 | Mechanical tasks (copy, rename, no logic changes) | Fast or cheap tier | No synthesis required. 60 to 80 percent savings vs. full model. |
 | Multi-file implementation, producer wiring | Mid tier | Real engineering judgment required. |
-| Core synthesis (the system's primary value) | Full tier | This is the product. Do not cheap out. |
+| Core synthesis (the platform's primary value) | Full tier | This is the product. Do not cheap out. |
 | Orchestrator on clean confirmations | Fast or cheap tier | Mechanical confirmation does not need deliberation. |
 | Orchestrator on design reviews or blocker triage | Full tier | When the call has consequences. |
 | Session start context loading | Not an LLM call | Do not use a model to summarize context you can read directly. |
@@ -795,7 +832,7 @@ MODEL_ASSIGNMENTS = {
     "financial_extraction": {"provider": "local",   "effort": "low"},
     "executive_summary":    {"provider": "primary", "effort": "max"},
     "competitive_analysis": {"provider": "primary", "effort": "max"},
-    "gap_detection":        {"provider": "primary", "effort": "max"},
+    "vacuum_detection":     {"provider": "primary", "effort": "max"},
     "mechanical_port":      {"provider": "fast",    "effort": "low"},
 }
 ```
@@ -927,6 +964,8 @@ Three retrieval mechanisms, three different use cases. Using the wrong one waste
 ---
 
 ## Part V. Quality, Lineage, and Reliability
+
+> **Status:** Complete. Owner: Kiro. Phase C delivered. The Quality Immune System is the signature original concept from this body of work.
 
 ### Chapter 21. Schema Validation at LLM Boundaries
 
@@ -1068,7 +1107,7 @@ run_phase() {
 
 # Usage
 run_phase "news-classify" python scripts/classify_news.py
-run_phase "gap-detect" python scripts/detect_gaps.py
+run_phase "vacuum-detect" python scripts/detect_vacuums.py
 run_phase "daily-brief"   python scripts/synthesize_brief.py
 ```
 
@@ -1098,8 +1137,8 @@ def track_phase(pipeline_name: str, phase: str):
         raise
 
 # Usage
-with track_phase("overnight", "gap-detect"):
-    detect_gaps()
+with track_phase("overnight", "vacuum-detect"):
+    detect_vacuums()
 ```
 
 **Surface phase health in your morning brief.** If you are not looking at pipeline health every morning, you will find out about failures when a downstream consumer complains. The `pipeline_runs` table is queryable. Query it.
@@ -1219,6 +1258,8 @@ That is the "so what." It connects the fact to the implication to the action. If
 ---
 
 ## Part VI. Engagement Reuse, Governance, and Translation
+
+> **Status:** Complete. Mixed ownership (Kiro: Ch 26, 28; Claude: Ch 27, 30; Codex: Ch 29).
 
 ### Chapter 26. The Promotion Rule
 
@@ -1552,11 +1593,13 @@ The pattern is implemented as the `agent-panel-review` skill. The skill's `refer
 
 ## Part VII. A Worked Example
 
+> **Status:** Complete. Owner: Kiro. Loop 3 delivered. Anonymized per Loop 4 decision: the downloadable package teaches the technique; the website and GitHub page may name IIP as the source proof point.
+
 ### Chapter 33. Before and After
 
 *Who this chapter is for: anyone who wants to see the standards applied end-to-end on a real system.*
 
-This chapter traces one production intelligence system through the transition from Era 01 to Era 03. The system is anonymized; the numbers are real.
+This chapter traces one production intelligence system through the transition from Era 01 to Era 03. The system is anonymized per the Loop 4 decision because the downloadable package is meant to be actionable for agents using the repo. The website and GitHub page can name IIP as the source proof point. The numbers are real.
 
 ---
 
@@ -1672,17 +1715,19 @@ Use this table during public editing. Internal examples can cite real tools, but
 | Ollama | Local model runtime | Use named runtime only in examples. |
 | launchd | OS scheduler | Cron, systemd, GitHub Actions, and cloud schedulers are equivalent patterns. |
 | SQLite | Persistent store | Use database-specific language only when the example depends on it. |
-| your production system | Production intelligence platform | Name a system only when intentionally used as a public case study. |
+| IIP | Production intelligence platform | Name IIP only when intentionally used as a public case study. |
 | Claude Code | Agentic coding environment | Name Claude Code in translation and reference sections. |
 | Cursor | Agentic IDE | Name Cursor in translation sections. |
 | Codex | Agentic coding environment | Name Codex in translation sections. |
 | MCP server | Tool connector | Explain the protocol only when needed. |
 | Skill | Pointer skill or reusable capability | The concept transfers across runtimes. |
 | Hook | Enforcement point | May be native hook, pre-commit hook, CI check, or wrapper. |
-| `app.db` | Project database | Keep source-specific database names out of public body copy. |
-| internal enhancement log | Session log | Keep internal repo paths and filenames out of the public copy. |
+| Project database file (e.g. `<project>.db`) | Persistent store | Keep source-specific database names out of public body copy. |
+| Project session/enhancement log | Session log | Refer to it by role, not by its source filename. |
 
 ### Appendix B. Glossary
+
+> **Status:** Complete. Owner: Claude. Phase F delivered.
 
 Terms used throughout this manual, defined precisely. Where a term has multiple meanings in the AI literature, this glossary defines it as it is used here.
 
@@ -1760,6 +1805,12 @@ Terms used throughout this manual, defined precisely. Where a term has multiple 
 
 **Synthetic insight (Tier 2 output).** An insight that requires cross-domain synthesis to formulate, invisible without the multi-domain view. The valuable output of a Compound AI system. Contrast with Observable insight. See Chapter 4.
 
+**Universal skill routing.** The multi-agent extension of the skills-routing
+pattern. Each runtime keeps its native skill root, while shared skills are
+symlinked to one canonical master directory such as `~/.compound-ai/skills`.
+Prevents Claude, Codex, OpenSpace, and future agents from drifting into
+different local copies of the same skill. See Chapter 11.
+
 **Two-Tier Output Model.** The classification of AI-produced insights as Tier 1 Observable (any analyst could spot this) or Tier 2 Synthetic (requires cross-domain synthesis). Pipelines optimize for the Tier 1 to Tier 2 ratio, not for volume. See Chapter 4.
 
 **Verify-origin.** The optional online verification script in the starter kit. Reports `VERIFIED`, `LOCAL-ONLY`, `MODIFIED`, `FORKED`, or `UNKNOWN`. Never required for normal use; only blocks the claim "verified official release."
@@ -1767,6 +1818,8 @@ Terms used throughout this manual, defined precisely. Where a term has multiple 
 **X+Y=Do Z formula.** The structure of an actionable recommendation: existing asset (X) plus unmet need (Y) equals specific action (Z). A test, not a template. Outputs that fail the formula are generic advice. See Chapter 5.
 
 ### Appendix C. Anti-Pattern Catalog
+
+> **Status:** Complete. Owner: Kiro. Phase C delivered.
 
 Every pattern in this catalog has been observed in production. Each entry: the anti-pattern, why it burns, and the replacement.
 
@@ -1790,10 +1843,12 @@ Every pattern in this catalog has been observed in production. Each entry: the a
 | Numeric IDs in public subscription URLs | Enumeration bypasses the gate | Opaque base62 slugs |
 | `"$@"` in `set -e` bash without `if/then` | One phase failure kills the whole overnight | `if "$@"; then code=0; else code=$?; fi` |
 | Defensive `isinstance` checks at every read site | Normalization scattered everywhere, easy to miss one | Write-time canonicalization |
-| Cache hit rate "assumed good" | No visibility into whether it is actually saving tokens | `llm_cache_attribution` sidecar plus `savings_by_role()` |
+| Cache hit rate "assumed good" | No visibility into whether it is actually saving tokens | `llm_cache_attribution` sidecar plus `report_cache_savings()` |
 | Synthesis-tier model for orchestrator confirmations | Expensive deliberation on mechanical decisions | Fast model for confirmations, full model for judgment calls |
 
 ### Appendix D. The Starter Kit, Annotated Tour
+
+> **Status:** Complete. Owner: Claude. Phase F delivered.
 
 The starter kit is the deployable version of every pattern in this manual. This tour walks every file in the v1.0 release, in the order a new user encounters them, with a one-line purpose statement and a pointer to the chapter that explains the design choice. A reader who has finished the field guide can skim this appendix in five minutes; a reader who lands here first will know which chapter to read for any file they touch.
 
@@ -1810,7 +1865,7 @@ compound-ai-starter-kit/
   compound-ai.sha256            Plain-text checksum file matching the manifest aggregate
 ```
 
-These seven files are the provenance surface. A new user who runs `verify-integrity.py` against them gets a clean local check of "this is the unmodified v1.0 release." See Chapter 27 (Governance) and the attribution architecture established in the governance section. The license split (CC BY 4.0 for docs, Apache 2.0 for code) is the standard combination for a kit that mixes prose and reusable code samples.
+These seven files are the provenance surface. A new user who runs `verify-integrity.py` against them gets a clean local check of "this is the unmodified v1.0 release." See Chapter 27 (Governance) and the attribution architecture established in the build plan. The license split (CC BY 4.0 for docs, Apache 2.0 for code) is the standard combination for a kit that mixes prose and reusable code samples.
 
 **The operating-contract surface**
 
@@ -1864,7 +1919,9 @@ These five files are the in-kit reference layer. The session loads them on deman
     provenance-check/SKILL.md           Reports origin, version, manifest match, optional online
 ```
 
-Six pointer skills, each under 100 lines, target 80, each dispatching to the relevant implementation or convention file. The skills are the practical interface to the manual: a session that wants to optimize context tiers invokes `context-loader`, not "read Chapter 8 of the field guide." See Chapter 11 (Skills-Routing Pattern) for the architecture.
+Six pointer skills, each under 100 lines, target 80, each dispatching to the relevant implementation or convention file. The skills are the practical interface to the manual: a session that wants to optimize context tiers invokes a routing skill, not "read Chapter 8 of the field guide." See Chapter 11 (Skills-Routing Pattern) for the architecture.
+
+> Note: this section documents the original starter-kit skill layout. Several of these pointer skills (`context-loader`, `pattern-promoter`, `provenance-check`, `trigger-indexer`) were consolidated into broader skills or demoted to CI in the v3.0.0 merge. `_skills-index.md` is the authoritative, derived list of the current routable skills; treat it, not this historical appendix, as ground truth for what exists today.
 
 **Checklists (the operational interface)**
 
@@ -1960,6 +2017,8 @@ A user who follows the checklist is operational in under an hour. A user who fil
 
 ### Appendix F. Further Reading
 
+> **Status:** Complete. Owner: Claude. Phase F delivered.
+
 A short, opinionated list. No padding. If a reference is here, it informed the work or is the right thing to read next.
 
 **The prior-art frame.** Matei Zaharia, Omar Khattab, Lin Chen, Jared Davis, Heather Miller, Chris Potts, James Zou, Michael Carbin, Jonathan Frankle, Naveen Rao, Ali Ghodsi. "The Shift from Models to Compound AI Systems." *Berkeley AI Research Blog*, February 2024. Names the shift this manual operationalizes. BAIR theorized the architecture; this is the operating layer.
@@ -1972,9 +2031,9 @@ A short, opinionated list. No padding. If a reference is here, it informed the w
 
 **On retrieval and embeddings.** The Chroma documentation for the practical patterns. The OpenAI embeddings cookbook for the canonical reference. The pgvector documentation for the SQL-native approach. The skill in this manual is knowing when to use retrieval at all (Chapter 20 and Appendix A); the platform docs handle the implementation.
 
-**On reliability and durable systems.** The *Patterns for Durable Agentic Systems* reference document was the source from which several patterns in this manual were distilled. The manual generalizes the patterns; the source-system-specific implementation details are out of scope here.
+**On reliability and durable systems.** The Patterns for Durable Agentic Systems reference document, the source from which several patterns in this manual were distilled. The manual generalizes; the patterns document keeps the IIP-specific implementation details. If you want the original case material, that is where it lives.
 
-**On scaled engagement.** A heavier-weight multi-tier enterprise reference pack inspired the skills-routing architecture in Chapter 11. Use it as the heavier-weight version of this manual's lighter starter kit when you need a multi-client, multi-tier deployment with full convention enforcement.
+**On scaled engagement.** The `_ClaudeDelivery` reference pack, the multi-tier deployment pattern that inspired the skills-routing architecture in Chapter 11. Use it as the heavier-weight version of this manual's lighter starter kit when you need a multi-client, multi-tier deployment with full convention enforcement.
 
 **On knowing when to stop.** Donald Knuth's *The Art of Computer Programming* preface, the Joel Spolsky archive at `joelonsoftware.com`, and Edsger Dijkstra's "The Humble Programmer" Turing Lecture. None of these are about AI. All of them are about the same problem this manual addresses: how to build systems that survive being depended on. Read them when the AI specifics start to feel like the whole story; they are not.
 
@@ -1982,4 +2041,4 @@ A short, opinionated list. No padding. If a reference is here, it informed the w
 
 ---
 
-*Compound AI Operating Standards v1.0.0.*
+*Compound AI Operating Standards v1.0.0-draft. Foreword complete; remainder in progress. Build coordinated in the rolling build log.*

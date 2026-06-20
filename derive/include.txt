@@ -1,0 +1,56 @@
+# include.txt
+#
+# Portable subset of the Mini canonical that derive.sh copies to downstream
+# editions. Paths are relative to operating-standards/. Release zip contents
+# are controlled by derive/exclude.txt.
+#
+# Lines beginning with # and blank lines are ignored. A trailing /** means
+# "copy this directory recursively." A path without /** copies a single file
+# or expands a directory when the path names a directory.
+
+# Root contracts, provenance, and indexes
+.gitignore
+.github/**
+AGENT.md
+CONTRIBUTING.md
+SECURITY.md
+CITATION.cff
+CLAUDE.md
+HANDOFF.md
+LICENSE
+LICENSE.md
+NOTICE
+NOTICE.md
+README.md
+EXECUTIVE.md
+RELEASES.md
+STANDARD.md
+_citations.md
+_map.md
+_skills-index.md
+_tiers.md
+
+# Adoption entry points
+adoption/**
+
+# Attribution and leak rule data (shippable; gate reads these)
+attribution-allowlist.txt
+forbidden-terms.txt
+leak-denylist.txt
+codemeta.json
+enforcement-rules.yaml
+
+# New layered kit tree
+capabilities/**
+doctrine/**
+docs/**
+enforcement/**
+runtime/**
+proof/**
+reference-impl/**
+
+# Team edition org layer (team derive only; excluded from Individual zip via exclude.txt)
+team/**
+
+# Reproducible derive tooling
+derive/**

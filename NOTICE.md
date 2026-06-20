@@ -1,10 +1,13 @@
 # NOTICE
 
-Compound AI Team Edition
+Compound AI Operating Standards v3.0.7
 
-Copyright 2026 Cameron Sutcliff.
+Copyright 2026 Cameron Sutcliff and Joshua Sutcliff.
 
-This product includes documentation, templates, scripts, and examples developed as part of Compound AI Team Edition.
+This product is a co-owned operating kit. It includes documentation, templates,
+scripts, CI gates, and examples developed as part of Compound AI Operating
+Standards, together with an optional Claude Code enforced runtime contributed by
+Joshua Sutcliff (github.com/joshuadsutcliff).
 
 Canonical source:
 
@@ -12,11 +15,18 @@ https://cameronsutcliff.com/compound-ai
 
 Source repository:
 
-https://github.com/cameronpsutcliff/compound-ai-team-edition
+https://github.com/cameronpsutcliff/compound-ai
 
 Attribution:
 
-`Compound AI Team Edition by Cameron Sutcliff`
+`Compound AI Operating Standards by Cameron Sutcliff and Joshua Sutcliff`
 
-Documentation and templates are licensed under CC BY 4.0. Code samples and scripts are licensed under Apache 2.0.
+Licensing summary:
 
+- Documentation and templates are licensed under CC BY 4.0.
+- Originally authored code samples, scripts, and CI gates are licensed under
+  Apache 2.0.
+- The enforced-runtime hooks (usage-guard, session-router) under
+  `runtime/claude-code/hooks/` are vendored under Apache-2.0, adapted from
+  Joshua Sutcliff's public claude-config (github.com/joshuadsutcliff). See
+  `runtime/claude-code/NOTICE` for the vendored-runtime credit.

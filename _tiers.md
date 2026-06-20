@@ -1,42 +1,45 @@
 # Tier Model
 
-This kit is organized into three tiers. Each tier inherits everything from the tier above it.
+Context-loading tiers describe how much kit material to load for a given task. They are unrelated to the six-layer directory layout.
 
 ```
-tier-1-global/         ← inherited by every project, every session
-  conventions/         ← style, voice, em-dash policy, skill-author rules
-  context/             ← tier0 always-load, tier1-current working context
-  checklists/          ← session-start, session-closeout, era transitions
-  skills-core/         ← request-router + 6 session infrastructure skills
-  design-system/       ← the kit tokens for shells (CSS variables, base styles)
+doctrine/tiers/          <- always-load context (tier0) and working context (tier1)
+  tier0.md               <- load every non-trivial session
+  tier1-current.md       <- current engagement context
+  checklists/            <- session-start, session-closeout, era transitions
 
-tier-2-capabilities/   ← workhorse skills you load when the task calls for them
-  skills/              ← cognitive modes, pressure-test, viz, code-audit, etc.
-  templates/           ← lineage-record, model-routing, quality-gates, token-budget
+doctrine/skills/         <- on-demand skills and deliverable shells
+  (tier 1 infrastructure skills)
+  (tier 2 capability skills)
+  (tier 3 shells: slide-shell, scroll-shell, mission-control, course-shell)
 
-tier-3-shells/         ← project scaffolds (deliverable starting points)
-  slide-shell/         ← presentation deck (presentation-deck pattern)
-  scroll-shell/        ← data-storytelling page (data-storytelling example)
-  mission-control/     ← dashboard layout
-  course-shell/        ← sequential lesson flow
+doctrine/contracts/      <- goal-contract, loop-spec, verifiable finish-line primitives
+doctrine/conventions/    <- trigger-registry, style, skill-author rules
 ```
 
 ## Inheritance rules
 
-- **Tier 1 is universal.** Conventions and core skills apply everywhere. Loaded at session start.
-- **Tier 2 is on-demand.** Capability skills load when their triggers fire. Most sessions touch 1-3 of these.
-- **Tier 3 is per-deliverable.** Shells are starting points for specific output types. Pick one, fill it, ship it.
+- **Tier 0/1 context is universal.** Conventions and core skills apply everywhere. Loaded at session start.
+- **Tier 2 skills are on-demand.** Capability skills load when their triggers fire.
+- **Tier 3 shells are per-deliverable.** Shells are starting points for specific output types.
+
+## Six-layer kit layout
+
+The repo is organized into six layers (see `STANDARD.md` and `_map.md`):
+
+1. **Doctrine** (`doctrine/`) - portable Markdown/YAML any agent honors
+2. **Capabilities** (`capabilities/`) - runtime-agnostic capability contracts
+3. **Runtime** (`runtime/`) - per-agent adapters (none privileged)
+4. **Enforcement** (`enforcement/`) - gates, CI, self-tests
+5. **Proof** (`proof/`) + **reference-impl/** - evidence and maintainer tooling
+6. **Adoption** (`adoption/`) - install and adopt entry points
 
 ## Authoring rules
 
-- A file in Tier 1 must be useful to every downstream consumer. If something is domain-specific, move it down.
-- A file in Tier 2 should not duplicate Tier 1. Reference upstream, do not copy.
-- Shells in Tier 3 inherit the design-system from Tier 1. They should not redefine tokens.
-
-## Why this structure
-
-The pattern is borrowed from a heavier-weight multi-tier enterprise reference pack. The same compounding logic applies: stuff that's universal lives once, stuff that's specific lives where it's specific, and inheritance makes the whole thing composable without duplication.
+- A file in tier 0/1 must be useful to every downstream consumer. If something is domain-specific, move it to skills.
+- Skills should not duplicate conventions. Reference upstream, do not copy.
+- Shells embed Abyssal design tokens in each shell's `index.html`.
 
 ## Naming note
 
-These tiers (1/2/3 = inheritance hierarchy) are unrelated to context tiers in `tier-1-global/context/` (tier0/tier1/tier2 = how much context to load for a given task). Different concept, similar word.
+Context tiers (tier0/tier1 = how much to load) differ from skill tiers (1/2/3 = inheritance hierarchy in the skill registry).

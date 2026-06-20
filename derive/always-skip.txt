@@ -1,0 +1,32 @@
+# always-skip.txt
+#
+# Single source of truth for paths that ship to NEITHER edition. The Team
+# edition ignores exclude.txt (the Individual-only lean-zip omissions), so these
+# must be dropped unconditionally. derive.sh's should_skip_copy drops them from
+# the tree, and check-portability.sh excludes them from its leak scan.
+#
+# Why one shared file: the gate's scanned surface must equal the UNION of what
+# actually ships (the Team edition = include.txt minus this list). Scoping the
+# gate to exclude.txt instead would leave a Team-shaped blind spot (team/ and
+# derive/ ship to Team but would never be leak-scanned). Keeping this list in
+# one place means derive's drop set and the gate's scan-exclude set can never
+# drift apart.
+#
+# Lines beginning with # and blank lines are ignored.
+
+# Internal build-process docs (expose the solo/internal-process reality, or
+# contradict the co-owned framing)
+docs/FINAL-REVIEW.md
+docs/HG-2-DEBATE.md
+docs/PUBLICATION-CHECKLIST.md
+docs/WEBSITE-COPY.md
+docs/FRESH-SESSION-DRY-RUN.md
+docs/component-ledger.md
+
+# Private-deployment docs (a named private project, real scheduled-job labels,
+# an internal orchestration pipeline)
+docs/derived-not-typed.md
+docs/brief-standard.md
+
+# Maintainer-only local leak denylist (literal personal terms; gitignored)
+leak-denylist.local.txt

@@ -1,6 +1,6 @@
 # License
 
-Compound AI Team Edition by Cameron Sutcliff.
+Compound AI Operating Standards by Cameron Sutcliff and Joshua Sutcliff.
 
 Canonical URL: https://cameronsutcliff.com/compound-ai
 
@@ -10,7 +10,7 @@ The documentation, templates, checklists, conventions, and Markdown files in thi
 
 You may share and adapt those materials for any purpose, including commercial use, provided you give appropriate credit:
 
-`Compound AI Team Edition by Cameron Sutcliff`
+`Compound AI Operating Standards by Cameron Sutcliff and Joshua Sutcliff`
 
 Include the canonical URL when practical:
 
@@ -26,9 +26,9 @@ You may use, modify, and redistribute the code under the Apache 2.0 terms. Prese
 
 Good attribution examples:
 
-1. `Adapted from Compound AI Team Edition by Cameron Sutcliff, https://cameronsutcliff.com/compound-ai`
-2. `Based on the Compound AI Team Edition by Cameron Sutcliff`
-3. `Includes material from Compound AI Team Edition, licensed CC BY 4.0`
+1. `Adapted from Compound AI Operating Standards by Cameron Sutcliff and Joshua Sutcliff, https://cameronsutcliff.com/compound-ai`
+2. `Based on the Compound AI Starter Kit by Cameron Sutcliff and Joshua Sutcliff`
+3. `Includes material from Compound AI Operating Standards, licensed CC BY 4.0`
 
 ## Full License Texts
 
@@ -39,4 +39,3 @@ https://creativecommons.org/licenses/by/4.0/
 Apache License 2.0:
 
 https://www.apache.org/licenses/LICENSE-2.0
-
