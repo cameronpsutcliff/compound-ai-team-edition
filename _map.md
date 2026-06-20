@@ -1,6 +1,6 @@
 # Map
 
-Navigation map for Compound AI Operating Standards v2.7.0. Tier model lives in `_tiers.md`.
+Navigation map for Compound AI Operating Standards v3.0.7. Tier model lives in `_tiers.md`.
 
 ## Root files
 
@@ -8,64 +8,70 @@ Navigation map for Compound AI Operating Standards v2.7.0. Tier model lives in `
 |---|---|
 | `README.md` | Public-facing intro |
 | `AGENT.md` | Root operating contract |
+| `STANDARD.md` | Six-layer operating model |
 | `HANDOFF.md` | Drop-in prompt for handing the kit to a fresh agent |
-| `INSTALL.md` | Multi-agent setup walkthrough; free-tier options |
+| `adoption/ADOPT.md` | Existing-project adoption entry point |
+| `adoption/INSTALL.md` | Multi-agent setup walkthrough |
 | `CLAUDE.md` | 3-line pointer to AGENT.md (Claude Code convention) |
-| `_tiers.md` | Inheritance model explanation |
-| `_skills-index.md` | Complete human skill registry, 27 skills across tiers |
-| `_citations.md` | Attribution registry; tooltip source for field guide reader |
+| `_tiers.md` | Context-loading tier model |
+| `_skills-index.md` | Complete human skill registry |
+| `_citations.md` | Attribution registry |
 | `_map.md` | This file |
-| `Project.md` | Human project overview |
-| `STATE.md` | Current state of this kit's development |
-| `session-log.md` | Append-only history |
-| `BACKLOG.md` | Open work |
+| `enforcement-rules.yaml` | Declarative CI gate and runtime policy contract |
 
-## Tier 1 -- Global (universal, inherited by everything)
+## Layer 1: Doctrine (portable core)
 
 | Path | Purpose |
 |---|---|
-| `tier-1-global/AGENT.md` | Tier 1 operating rules |
-| `tier-1-global/conventions/` | style-guide, token-efficiency, skill-author-guide, provenance, session-log-format, trigger-registry |
-| `tier-1-global/context/` | tier0.md (always-load), tier1-current.md, tier1-subsystem/ |
-| `tier-1-global/checklists/` | session-start, session-closeout, era transitions, model-routing, new-project, pattern-promotion |
-| `tier-1-global/skills-core/` | 13 session infrastructure skills including request-router, goal-runner, trigger-indexer, release-captain, adoption-captain |
-| `tier-1-global/design-system/` | the kit CSS tokens for use in Tier 3 shells |
+| `doctrine/tiers/` | tier0/tier1 context, checklists, tier AGENT files |
+| `doctrine/skills/` | All skills (tier 1 infrastructure, tier 2 capabilities, tier 3 shells) |
+| `doctrine/contracts/` | goal-contract, loop-spec, and related templates |
+| `doctrine/conventions/` | style-guide, token-efficiency, skill-author-guide, trigger-registry, session-log-format, quick-recap |
 
-## Tier 2 -- Capabilities (on-demand)
+## Layer 2: Capabilities (runtime-agnostic)
 
 | Path | Purpose |
 |---|---|
-| `tier-2-capabilities/AGENT.md` | Tier 2 operating rules |
-| `tier-2-capabilities/skills/` | 15 capability skills (7 cognitive modes + 5 analytical + 2 domain + 1 orchestration). Cognitive modes ship `reference/protocol.md` files for full operationalization. |
-| `tier-2-capabilities/templates/` | lineage-record, loop-spec, model-routing, quality-gates, token-budget |
+| `capabilities/` | Universal capability contracts (CB-2) |
 
-## Tier 3 -- Shells (project scaffolds)
+## Layer 3: Runtime adapters
 
 | Path | Purpose |
 |---|---|
-| `tier-3-shells/AGENT.md` | Tier 3 operating rules |
-| `tier-3-shells/slide-shell/` | Presentation deck scaffold (keyboard nav, speaker notes, fullscreen) |
-| `tier-3-shells/scroll-shell/` | Data-storytelling scaffold (Framer Motion, sliders, Recharts) |
-| `tier-3-shells/mission-control/` | Dashboard scaffold |
-| `tier-3-shells/course-shell/` | Sequential lesson scaffold |
+| `runtime/claude-code/` | Full Claude Code hook enforcement |
+| `runtime/codex/` | Codex adapter (CB-3) |
+| `runtime/cursor/` | Cursor adapter (CB-3) |
+| `runtime/generic/` | Graceful-degradation adapter (CB-3) |
 
-## Support directories
+## Layer 4: Enforcement
 
 | Path | Purpose |
 |---|---|
-| `code/` | Reference implementations (cache_key.py, schema_validator.py, pipeline_runs.sql, phase_wrapper.sh) |
-| `scripts/` | build-manifest.py, verify-integrity.py, verify-origin.py, new-project.sh |
-| `hooks/` | git hooks (pre-commit/no-em-dashes, post-session/append-state) |
-| `docs/` | FIELD-GUIDE.md and related publication docs |
-| `releases/` | Versioned release archives |
+| `enforcement/bin/` | CI doctrine gates (`check-*.sh`, orchestrated by `check-kit.sh`) |
+| `.github/workflows/` | CI workflows (repo root, so GitHub Actions triggers them) |
+| `enforcement/tests/` | Planted-fixture self-test harness |
+| `enforcement/hooks/` | Git hooks (pre-commit, post-session) |
 
-## Upstream Pointers
+## Layer 5: Proof
 
-| Need | Path |
+| Path | Purpose |
 |---|---|
-| Canonical framework | `https://cameronsutcliff.com/compound-ai` |
-| Source repo | `https://github.com/cameronpsutcliff/compound-ai-operating-standards` |
-| Field guide | `https://cameronsutcliff.com/compound-ai/field-guide` |
+| `proof/` | session-start benchmark and net-positive evidence |
+
+## Layer 6: Reference implementation and adoption
+
+| Path | Purpose |
+|---|---|
+| `reference-impl/` | Maintainer Python tooling (provenance, build, derive) |
+| `adoption/` | ADOPT.md, INSTALL.md, adoption protocol |
+
+## Documentation
+
+| Path | Purpose |
+|---|---|
+| `docs/ARCHITECTURE.md` | The six-layer architecture and the capability/adapter model |
+| `docs/FIELD-GUIDE.md` | Field guide (lite panel chapters) |
+| `docs/known-limits.md` | Known mechanical limits |
 
 ## Rule
 
